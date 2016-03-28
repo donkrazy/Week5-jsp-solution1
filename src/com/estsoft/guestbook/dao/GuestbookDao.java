@@ -79,7 +79,7 @@ public class GuestbookDao {
 		try {
 			conn = dbConnection.getConnection();
 			stmt = conn.createStatement();
-			String sql = "SELECT no, name, DATE_FORMAT( reg_date, '%Y-%m-%d %h:%i:%s' ), message from guestbook ORDER BY reg_date desc";
+			String sql = "SELECT no, name, DATE_FORMAT( reg_date, '%Y-%m-%d %p %h:%i:%s' ), message from guestbook ORDER BY reg_date desc";
 			rs = stmt.executeQuery( sql );
 			while( rs.next() ) {
 				Long no = rs.getLong( 1 );
